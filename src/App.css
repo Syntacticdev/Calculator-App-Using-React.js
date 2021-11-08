@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -13,19 +18,74 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.calculator_wrapper {
+  height: 80vmin;
+  width: 50vmin;
+  background-color: rgb(230, 245, 245);
+  margin-top: 4em;
+  display: grid;
+  grid-template-rows: 30% 70%;
+}
+
+.calc_title {
+  font-size: 1em;
+}
+
+.screen {
+  height: 100%;
+  width: 100%;
+  background: rgb(99, 48, 48);
+  color: white;
+  display: grid;
+  grid-template-rows: 5% 47.5 47.5%;
+  font-weight: 700;
+  padding: 0 0.5em;
+  border-right: 10px solid rgb(62, 230, 84);
+}
+
+.prev,
+.result {
+  text-align: right;
+}
+
+.prev {
+  font-size: 1.7em;
+}
+
+.result {
+  font-size: 1.5em;
+}
+.digit {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+}
+
+button {
+  padding: 10px 4px;
+  background-color: white;
+  border: 0.5px solid rgb(224, 172, 172);
+  font-weight: 800;
+
+  font-size: 1.5em;
+}
+
+button:hover {
+  background: green;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nums {
+  background-color: rgb(227, 233, 238);
+}
+
+@media (max-width: 760px) {
+  .calculator_wrapper {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
 }
 
 @keyframes App-logo-spin {
