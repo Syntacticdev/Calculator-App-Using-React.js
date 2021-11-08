@@ -17,7 +17,7 @@ function App() {
       setResult(sqrt);
     }
 
-    if (action === "!") {
+    if (action === "!" && prev !== 0) {
       const facNums = [];
       for (let i = 1; i <= prev; i++) {
         facNums.push(i);
@@ -38,27 +38,25 @@ function App() {
   };
 
   const calculate = () => {
-    if (prev !== undefined || prev !== "")
-      if (initialValue.trim().length !== 0)
-        switch (action) {
-          case "÷":
-            assignResult(parseFloat(prev / initialValue));
-            break;
-          case "+":
-            assignResult(parseFloat(prev) + parseFloat(initialValue));
-            break;
-          case "–":
-            assignResult(parseFloat(prev - initialValue));
-            break;
-          case "*":
-            assignResult(parseFloat(prev * initialValue));
-            break;
-          case "√":
-            assignResult(parseFloat(prev * initialValue));
-            break;
-          default:
-            return;
-        }
+    switch (action) {
+      case "÷":
+        assignResult(parseFloat(prev / initialValue));
+        break;
+      case "+":
+        assignResult(parseFloat(prev) + parseFloat(initialValue));
+        break;
+      case "–":
+        assignResult(parseFloat(prev - initialValue));
+        break;
+      case "*":
+        assignResult(parseFloat(prev * initialValue));
+        break;
+      case "√":
+        assignResult(parseFloat(prev * initialValue));
+        break;
+      default:
+        return;
+    }
   };
 
   const initAction = (fk) => {
