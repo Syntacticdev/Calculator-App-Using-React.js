@@ -10,4 +10,4 @@
 - log in base10
 - Factorial
 
-## Follow SyntacticDev on Instagram @devsyntatic 💤
+## Follow SyntacticDev on Instagram @devsyntactic 💤
